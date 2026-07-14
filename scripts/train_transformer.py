@@ -38,7 +38,7 @@ class TransformerClassifier(nn.Module):
         super(TransformerClassifier, self).__init__()
         self.input_projection = nn.Linear(1, d_model)
         encoder_layer = nn.TransformerEncoderLayer(
-            d_model=d_model, nhead=nhead, dim_feedforward=256,
+            d_model=d_model, nhead=nhead, dim_feedforward=512,
             dropout=dropout, batch_first=True)
         self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
         self.fc = nn.Linear(d_model, num_classes)
@@ -52,13 +52,15 @@ class TransformerClassifier(nn.Module):
         x = self.fc(x)
         return x
 
-model = TransformerClassifier(input_size=71, d_model=64, nhead=4, num_layers=2, num_classes=15).to(device)
+model = TransformerClassifier(
+    input_size=71, d_model=128, nhead=4,
+    num_layers=3, num_classes=15).to(device)
 print(f"Parameters: {sum(p.numel() for p in model.parameters()):,}")
 
 criterion = nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.0005)
 
-for epoch in range(10):
+for epoch in range(20):
     model.train()
     running_loss = 0.0
     correct = 0
@@ -74,9 +76,9 @@ for epoch in range(10):
         _, predicted = torch.max(outputs, 1)
         total += batch_y.size(0)
         correct += (predicted == batch_y).sum().item()
-    print(f"Epoch {epoch+1}/10 - Loss: {running_loss/len(train_loader):.4f}, Accuracy: {100*correct/total:.2f}%")
+    print(f"Epoch {epoch+1}/20 - Loss: {running_loss/len(train_loader):.4f}, Accuracy: {100*correct/total:.2f}%")
 
-torch.save(model.state_dict(), '/scratch/kdhungel/iads-project/models/transformer.pth')
+torch.save(model.state_dict(), '/scratch/kdhungel/iads-project/models/transformer_v2.pth')
 print("Model saved.")
 
 model.eval()
@@ -93,6 +95,6 @@ all_preds = le.inverse_transform(all_preds)
 all_labels = le.inverse_transform(all_labels)
 print(classification_report(all_labels, all_preds, digits=4))
 
-with open('/scratch/kdhungel/iads-project/results/transformer_report.txt', 'w') as f:
+with open('/scratch/kdhungel/iads-project/results/transformer_v2_report.txt', 'w') as f:
     f.write(classification_report(all_labels, all_preds, digits=4))
 print("Report saved.")
