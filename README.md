@@ -1,4 +1,3 @@
-```markdown
 # IAA-Transformer: Imbalance-Aware Attention Transformer for Network Intrusion Detection
 
 ## Overview
@@ -57,4 +56,3 @@ iads-project/
 Kritish Dhungel
 MSc Computational Sciences, Laurentian University
 Supervisor: Dr. Kalpdrum Passi
-```
