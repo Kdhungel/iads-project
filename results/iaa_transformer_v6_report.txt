@@ -1,0 +1,21 @@
+                            precision    recall  f1-score   support
+
+                    BENIGN     0.0000    0.0000    0.0000    339790
+                       Bot     0.0000    0.0000    0.0000       293
+                      DDoS     0.0000    0.0000    0.0000     19153
+             DoS GoldenEye     0.0000    0.0000    0.0000      1540
+                  DoS Hulk     0.0000    0.0000    0.0000     34427
+          DoS Slowhttptest     0.0000    0.0000    0.0000       823
+             DoS slowloris     0.0000    0.0000    0.0000       867
+               FTP-Patator     0.0402    0.4895    0.0743      1187
+                Heartbleed     0.0002    1.0000    0.0004         2
+              Infiltration     0.0000    0.4000    0.0000         5
+                  PortScan     0.0000    0.0000    0.0000     23757
+               SSH-Patator     0.0000    0.0000    0.0000       882
+  Web Attack - Brute Force     0.0000    0.0000    0.0000       225
+Web Attack - Sql Injection     0.0000    1.0000    0.0000         3
+          Web Attack - XSS     0.0027    0.9278    0.0054        97
+
+                  accuracy                         0.0016    423051
+                 macro avg     0.0029    0.2545    0.0053    423051
+              weighted avg     0.0001    0.0016    0.0002    423051
