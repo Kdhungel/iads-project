@@ -1,0 +1,22 @@
+XGBoost binary + SMOTE seed 42
+macro_f1=0.9987 accuracy=0.9992 auc_roc=1.0000
+train_time_s=15.8 inference_time_s=0.15
+
+              precision    recall  f1-score   support
+
+      BENIGN     0.9999    0.9990    0.9995    454250
+      ATTACK     0.9961    0.9996    0.9979    111311
+
+    accuracy                         0.9992    565561
+   macro avg     0.9980    0.9993    0.9987    565561
+weighted avg     0.9992    0.9992    0.9992    565561
+
+
+Per-class false positive rate
+  BENIGN                        0.000377
+  ATTACK                        0.000951
+
+Confusion matrix
+labels: BENIGN, ATTACK
+[[453818    432]
+ [    42 111269]]

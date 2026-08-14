@@ -1,0 +1,137 @@
+======================================================================
+PART 1  Duplicate statistics
+======================================================================
+Train 2,262,240 rows    Test 565,561 rows
+
+Duplicate rows within train:  229,377  (10.14%)
+Duplicate rows within test:   35,301  (6.24%)
+Test rows that also appear in train: 75,950  (13.43%)
+
+Leakage by class
+Class                            Test rows  Also in train   Percent
+-------------------------------------------------------------------
+BENIGN                             454,250         44,289      9.7%
+Bot                                    391              1      0.3%
+DDoS                                25,605              6      0.0%
+DoS GoldenEye                        2,059              2      0.1%
+DoS Hulk                            46,025         11,756     25.5%
+DoS Slowhttptest                     1,100             71      6.5%
+DoS slowloris                        1,159            112      9.7%
+FTP-Patator                          1,587            468     29.5%
+Heartbleed                               2              0      0.0%
+Infiltration                             7              0      0.0%
+PortScan                            31,761         18,683     58.8%
+SSH-Patator                          1,180            555     47.0%
+Web Attack - Brute Force               301              7      2.3%
+Web Attack - Sql Injection               4              0      0.0%
+Web Attack - XSS                       130              0      0.0%
+
+======================================================================
+PART 2  Day-based split
+======================================================================
+Found 8 daily capture files:
+  Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
+  Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
+  Friday-WorkingHours-Morning.pcap_ISCX.csv
+  Monday-WorkingHours.pcap_ISCX.csv
+  Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv
+  Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv
+  Tuesday-WorkingHours.pcap_ISCX.csv
+  Wednesday-workingHours.pcap_ISCX.csv
+
+Merged: 2,830,743 rows
+
+Class presence by day
+  BENIGN                        appears in 8 of 8 files
+  Bot                           appears in 1 of 8 files
+  DDoS                          appears in 1 of 8 files
+  DoS GoldenEye                 appears in 1 of 8 files
+  DoS Hulk                      appears in 1 of 8 files
+  DoS Slowhttptest              appears in 1 of 8 files
+  DoS slowloris                 appears in 1 of 8 files
+  FTP-Patator                   appears in 1 of 8 files
+  Heartbleed                    appears in 1 of 8 files
+  Infiltration                  appears in 1 of 8 files
+  PortScan                      appears in 1 of 8 files
+  SSH-Patator                   appears in 1 of 8 files
+  Web Attack - Brute Force      appears in 1 of 8 files
+  Web Attack - Sql Injection    appears in 1 of 8 files
+  Web Attack - XSS              appears in 1 of 8 files
+
+14 classes appear in only one capture file:
+  Bot
+  DDoS
+  DoS GoldenEye
+  DoS Hulk
+  DoS Slowhttptest
+  DoS slowloris
+  FTP-Patator
+  Heartbleed
+  Infiltration
+  PortScan
+  SSH-Patator
+  Web Attack - Brute Force
+  Web Attack - Sql Injection
+  Web Attack - XSS
+
+These cannot survive a day-based split, so the multiclass task is not
+evaluable this way. The split below runs on the binary task.
+
+After cleaning: 2,827,761 rows, 71 features
+
+Train on 5 files:
+  Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
+  Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
+  Friday-WorkingHours-Morning.pcap_ISCX.csv
+  Monday-WorkingHours.pcap_ISCX.csv
+  Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv
+Test on 3 files:
+  Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv
+  Tuesday-WorkingHours.pcap_ISCX.csv
+  Wednesday-workingHours.pcap_ISCX.csv
+
+Train 1,520,528 rows, attack rate 18.99%
+Test  1,307,233 rows, attack rate 20.48%
+
+Duplicate check across the day-based split
+  Test rows also in train: 64,278 (4.92%)
+  Compare with 13.43% under the random split.
+
+----------------------------------------------------------------------
+Random Forest, day-based split, binary task
+----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+      BENIGN     0.7964    1.0000    0.8867   1039498
+      ATTACK     0.9942    0.0076    0.0151    267735
+
+    accuracy                         0.7967   1307233
+   macro avg     0.8953    0.5038    0.4509   1307233
+weighted avg     0.8369    0.7967    0.7082   1307233
+
+macro F1 0.4509    train 37.3s
+Confusion matrix, labels BENIGN, ATTACK
+[[1039486      12]
+ [ 265692    2043]]
+
+----------------------------------------------------------------------
+XGBoost, day-based split, binary task
+----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+      BENIGN     0.8096    0.9999    0.8948   1039498
+      ATTACK     0.9975    0.0871    0.1603    267735
+
+    accuracy                         0.8130   1307233
+   macro avg     0.9036    0.5435    0.5275   1307233
+weighted avg     0.8481    0.8130    0.7443   1307233
+
+macro F1 0.5275    train 4.6s
+Confusion matrix, labels BENIGN, ATTACK
+[[1039439      59]
+ [ 244405   23330]]
+
+======================================================================
+Compare the macro F1 above against the random-split binary results.
+A substantial drop indicates the random split was inflating performance
+through session overlap rather than measuring generalisation.

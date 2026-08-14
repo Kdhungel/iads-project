@@ -1,0 +1,17 @@
+Gaussian Naive Bayes — binary attack vs benign, seed=42
+train_time_s=1.5  inference_time_s=0.29
+
+              precision    recall  f1-score   support
+
+      BENIGN     0.9917    0.2696    0.4239    454250
+      ATTACK     0.2495    0.9908    0.3986    111311
+
+    accuracy                         0.4115    565561
+   macro avg     0.6206    0.6302    0.4113    565561
+weighted avg     0.8457    0.4115    0.4189    565561
+
+
+Confusion matrix
+labels: BENIGN, ATTACK
+[[122452 331798]
+ [  1020 110291]]

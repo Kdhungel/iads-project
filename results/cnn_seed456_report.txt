@@ -1,0 +1,45 @@
+cnn seed=456
+train_time_s=159.6 inference_time_s=2.4
+params=586127
+macro_f1=0.8281
+
+                            precision    recall  f1-score   support
+
+                    BENIGN     0.9946    0.9929    0.9937    454250
+                       Bot     0.5252    0.6675    0.5878       391
+                      DDoS     0.9992    0.9974    0.9983     25605
+             DoS GoldenEye     0.9975    0.9849    0.9912      2059
+                  DoS Hulk     0.9895    0.9853    0.9874     46025
+          DoS Slowhttptest     0.8949    0.9909    0.9405      1100
+             DoS slowloris     0.9904    0.9827    0.9866      1159
+               FTP-Patator     0.9987    0.9950    0.9968      1587
+                Heartbleed     1.0000    1.0000    1.0000         2
+              Infiltration     1.0000    0.8571    0.9231         7
+                  PortScan     0.9279    0.9520    0.9398     31761
+               SSH-Patator     0.9525    0.9678    0.9601      1180
+  Web Attack - Brute Force     0.8455    0.3455    0.4906       301
+Web Attack - Sql Injection     0.0625    0.2500    0.1000         4
+          Web Attack - XSS     0.3750    0.8769    0.5253       130
+
+                  accuracy                         0.9895    565561
+                 macro avg     0.8369    0.8564    0.8281    565561
+              weighted avg     0.9898    0.9895    0.9895    565561
+
+
+Confusion matrix
+labels: BENIGN, Bot, DDoS, DoS GoldenEye, DoS Hulk, DoS Slowhttptest, DoS slowloris, FTP-Patator, Heartbleed, Infiltration, PortScan, SSH-Patator, Web Attack - Brute Force, Web Attack - Sql Injection, Web Attack - XSS
+[[451005    236     16      3    462    111      6      2      0      0   2348     43      6      9      3]
+ [   130    261      0      0      0      0      0      0      0      0      0      0      0      0      0]
+ [    65      0  25539      1      0      0      0      0      0      0      0      0      0      0      0]
+ [    14      0      0   2028     14      3      0      0      0      0      0      0      0      0      0]
+ [   674      0      1      0  45350      0      0      0      0      0      0      0      0      0      0]
+ [     7      0      0      0      0   1090      3      0      0      0      0      0      0      0      0]
+ [     4      0      0      0      1     14   1139      0      0      0      0      1      0      0      0]
+ [     4      0      0      0      0      0      1   1579      0      0      0      3      0      0      0]
+ [     0      0      0      0      0      0      0      0      2      0      0      0      0      0      0]
+ [     1      0      0      0      0      0      0      0      0      6      0      0      0      0      0]
+ [  1512      0      3      0      5      0      0      0      0      0  30238      0      0      1      2]
+ [    36      0      0      0      1      0      1      0      0      0      0   1142      0      0      0]
+ [     1      0      0      0      0      0      0      0      0      0      0      6    104      5    185]
+ [     0      0      0      1      0      0      0      0      0      0      0      2      0      1      0]
+ [     1      0      0      0      0      0      0      0      0      0      0      2     13      0    114]]

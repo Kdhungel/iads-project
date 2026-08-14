@@ -1,0 +1,61 @@
+Random Forest seed 123
+macro_f1=0.8225 accuracy=0.9958 auc_roc=0.9996
+train_time_s=84.6 inference_time_s=1.28
+
+                            precision    recall  f1-score   support
+
+                    BENIGN     0.9999    0.9952    0.9976    454250
+                       Bot     0.1868    0.9821    0.3139       391
+                      DDoS     0.9998    0.9996    0.9997     25605
+             DoS GoldenEye     0.9981    0.9976    0.9978      2059
+                  DoS Hulk     0.9938    0.9997    0.9967     46025
+          DoS Slowhttptest     0.9909    0.9936    0.9923      1100
+             DoS slowloris     0.9957    0.9940    0.9948      1159
+               FTP-Patator     1.0000    0.9994    0.9997      1587
+                Heartbleed     1.0000    1.0000    1.0000         2
+              Infiltration     1.0000    0.7143    0.8333         7
+                  PortScan     0.9939    0.9996    0.9967     31761
+               SSH-Patator     1.0000    1.0000    1.0000      1180
+  Web Attack - Brute Force     0.8040    0.6678    0.7296       301
+Web Attack - Sql Injection     0.0000    0.0000    0.0000         4
+          Web Attack - XSS     0.4084    0.6000    0.4860       130
+
+                  accuracy                         0.9958    565561
+                 macro avg     0.8247    0.8629    0.8225    565561
+              weighted avg     0.9982    0.9958    0.9968    565561
+
+
+Per-class false positive rate
+  BENIGN                        0.000440
+  Bot                           0.002958
+  DDoS                          0.000009
+  DoS GoldenEye                 0.000007
+  DoS Hulk                      0.000556
+  DoS Slowhttptest              0.000018
+  DoS slowloris                 0.000009
+  FTP-Patator                   0.000000
+  Heartbleed                    0.000000
+  Infiltration                  0.000000
+  PortScan                      0.000367
+  SSH-Patator                   0.000000
+  Web Attack - Brute Force      0.000087
+  Web Attack - Sql Injection    0.000002
+  Web Attack - XSS              0.000200
+
+Confusion matrix
+labels: BENIGN, Bot, DDoS, DoS GoldenEye, DoS Hulk, DoS Slowhttptest, DoS slowloris, FTP-Patator, Heartbleed, Infiltration, PortScan, SSH-Patator, Web Attack - Brute Force, Web Attack - Sql Injection, Web Attack - XSS
+[[452079   1672      5      0    279      4      1      0      0      0    191      0      1      1     17]
+ [     7    384      0      0      0      0      0      0      0      0      0      0      0      0      0]
+ [     7      0  25596      0      2      0      0      0      0      0      0      0      0      0      0]
+ [     1      0      0   2054      2      2      0      0      0      0      0      0      0      0      0]
+ [     9      0      0      3  46010      0      0      0      0      0      3      0      0      0      0]
+ [     3      0      0      0      0   1093      4      0      0      0      0      0      0      0      0]
+ [     4      0      0      0      0      3   1152      0      0      0      0      0      0      0      0]
+ [     1      0      0      0      0      0      0   1586      0      0      0      0      0      0      0]
+ [     0      0      0      0      0      0      0      0      2      0      0      0      0      0      0]
+ [     2      0      0      0      0      0      0      0      0      5      0      0      0      0      0]
+ [     5      0      0      0      6      1      0      0      0      0  31748      0      0      0      1]
+ [     0      0      0      0      0      0      0      0      0      0      0   1180      0      0      0]
+ [     4      0      0      0      0      0      0      0      0      0      1      0    201      0     95]
+ [     1      0      0      1      0      0      0      0      0      0      0      0      2      0      0]
+ [     5      0      0      0      0      0      0      0      0      0      1      0     46      0     78]]

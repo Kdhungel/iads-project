@@ -1,0 +1,44 @@
+exp1_leakyrelu  seed=42  activation=leakyrelu
+train_time_s=2251.2  inference_time_s=10.6
+params=597007
+
+                            precision    recall  f1-score   support
+
+                    BENIGN     0.9539    0.9753    0.9645    454250
+                       Bot     0.7500    0.3069    0.4356       391
+                      DDoS     0.9007    0.9965    0.9462     25605
+             DoS GoldenEye     0.8829    0.7542    0.8135      2059
+                  DoS Hulk     0.9772    0.6745    0.7981     46025
+          DoS Slowhttptest     0.8079    0.9864    0.8883      1100
+             DoS slowloris     0.6459    0.6626    0.6542      1159
+               FTP-Patator     0.9950    0.6219    0.7654      1587
+                Heartbleed     0.2222    1.0000    0.3636         2
+              Infiltration     0.0140    0.7143    0.0275         7
+                  PortScan     0.8407    0.8573    0.8489     31761
+               SSH-Patator     0.9597    0.5051    0.6619      1180
+  Web Attack - Brute Force     0.1164    0.1960    0.1460       301
+Web Attack - Sql Injection     0.0000    0.0000    0.0000         4
+          Web Attack - XSS     0.0579    0.7077    0.1070       130
+
+                  accuracy                         0.9408    565561
+                 macro avg     0.6083    0.6639    0.5614    565561
+              weighted avg     0.9451    0.9408    0.9401    565561
+
+
+Confusion matrix
+labels: BENIGN, Bot, DDoS, DoS GoldenEye, DoS Hulk, DoS Slowhttptest, DoS slowloris, FTP-Patator, Heartbleed, Infiltration, PortScan, SSH-Patator, Web Attack - Brute Force, Web Attack - Sql Injection, Web Attack - XSS
+[[443030     40   2786    203    607    240    401      5      7    140   5144     25    293     69   1260]
+ [   271    120      0      0      0      0      0      0      0      0      0      0      0      0      0]
+ [    49      0  25515      3     26      0      0      0      0      1     11      0      0      0      0]
+ [   381      0      0   1553     88      2      1      0      0      0      3      0      0     24      7]
+ [ 14977      0      4      0  31043      0      1      0      0      0      0      0      0      0      0]
+ [     7      0      0      0      0   1085      7      0      0      0      0      0      0      0      1]
+ [   371      0      0      0      1     16    768      0      0      0      0      0      0      0      3]
+ [   590      0      0      0      0      0      9    987      0      0      0      0      1      0      0]
+ [     0      0      0      0      0      0      0      0      2      0      0      0      0      0      0]
+ [     2      0      0      0      0      0      0      0      0      5      0      0      0      0      0]
+ [  4198      0     24      0      2      0      0      0      0    211  27229      0      0      0     97]
+ [   448      0      0      0      0      0      0      0      0      0      0    596    136      0      0]
+ [   112      0      0      0      0      0      0      0      0      0      0      0     59      0    130]
+ [     4      0      0      0      0      0      0      0      0      0      0      0      0      0      0]
+ [    18      0      0      0      0      0      2      0      0      0      0      0     18      0     92]]

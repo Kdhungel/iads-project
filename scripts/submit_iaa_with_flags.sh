@@ -9,4 +9,4 @@
 #SBATCH --account=def-kpassi
 
 source ~/iads-env/bin/activate
-python /scratch/kdhungel/iads-project/scripts/train_iaa_with_flags.py
+python /scratch/kdhungel/iads-project/scripts/train_iaa_with_flags.py 42

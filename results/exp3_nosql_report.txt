@@ -1,0 +1,42 @@
+exp3_nosql  seed=42  activation=relu
+train_time_s=2234.9  inference_time_s=10.4
+params=596878
+
+                          precision    recall  f1-score   support
+
+                  BENIGN     0.9632    0.9829    0.9730    454250
+                     Bot     0.4906    0.6010    0.5402       391
+                    DDoS     0.9982    0.9035    0.9485     25605
+           DoS GoldenEye     0.7395    0.9456    0.8299      2059
+                DoS Hulk     0.9732    0.7223    0.8292     46025
+        DoS Slowhttptest     0.7553    0.9764    0.8517      1100
+           DoS slowloris     0.9048    0.9508    0.9272      1159
+             FTP-Patator     0.9921    0.9546    0.9730      1587
+              Heartbleed     0.1053    1.0000    0.1905         2
+            Infiltration     0.0625    0.5714    0.1127         7
+                PortScan     0.8877    0.9528    0.9191     31761
+             SSH-Patator     0.8344    0.9780    0.9005      1180
+Web Attack - Brute Force     0.1540    0.6246    0.2470       301
+        Web Attack - XSS     0.0905    0.4538    0.1509       130
+
+                accuracy                         0.9555    565557
+               macro avg     0.6394    0.8298    0.6710    565557
+            weighted avg     0.9589    0.9555    0.9552    565557
+
+
+Confusion matrix
+labels: BENIGN, Bot, DDoS, DoS GoldenEye, DoS Hulk, DoS Slowhttptest, DoS slowloris, FTP-Patator, Heartbleed, Infiltration, PortScan, SSH-Patator, Web Attack - Brute Force, Web Attack - XSS
+[[446479    244     36    652    855    295    103     11     14     58   3826    207    966    504]
+ [   155    235      0      0      1      0      0      0      0      0      0      0      0      0]
+ [  2389      0  23135     31     46      0      0      0      1      2      1      0      0      0]
+ [    85      0      0   1947      2     22      0      0      2      0      1      0      0      0]
+ [ 12778      0      0      2  33243      0      1      1      0      0      0      0      0      0]
+ [    22      0      0      0      0   1074      3      0      0      0      0      0      0      1]
+ [    20      0      0      1      9     26   1102      0      0      0      0      1      0      0]
+ [    61      0      0      0      0      0      9   1515      0      0      0      2      0      0]
+ [     0      0      0      0      0      0      0      0      2      0      0      0      0      0]
+ [     3      0      0      0      0      0      0      0      0      4      0      0      0      0]
+ [  1486      0      5      0      1      5      0      0      0      0  30261      1      0      2]
+ [    26      0      0      0      0      0      0      0      0      0      0   1154      0      0]
+ [     9      0      0      0      0      0      0      0      0      0      0     18    188     86]
+ [     4      0      0      0      0      0      0      0      0      0      0      0     67     59]]

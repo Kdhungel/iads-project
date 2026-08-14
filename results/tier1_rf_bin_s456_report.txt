@@ -1,0 +1,22 @@
+RF binary seed 456
+macro_f1=0.9983 accuracy=0.9990 auc_roc=1.0000
+train_time_s=85.3 inference_time_s=0.87
+
+              precision    recall  f1-score   support
+
+      BENIGN     0.9998    0.9989    0.9993    454250
+      ATTACK     0.9955    0.9992    0.9973    111311
+
+    accuracy                         0.9990    565561
+   macro avg     0.9977    0.9990    0.9983    565561
+weighted avg     0.9990    0.9990    0.9990    565561
+
+
+Per-class false positive rate
+  BENIGN                        0.000827
+  ATTACK                        0.001101
+
+Confusion matrix
+labels: BENIGN, ATTACK
+[[453750    500]
+ [    92 111219]]

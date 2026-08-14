@@ -1,0 +1,72 @@
+Multi-pass inference, seed=456
+train_time_s=2249.2 inference_time_s=10.7
+learned_alpha=0.002691
+predictions_changed_by_pass2=19 (0.003%)
+macro_f1_pass1=0.6453
+macro_f1_pass2=0.6450
+
+PASS 2 (bias applied)
+                            precision    recall  f1-score   support
+
+                    BENIGN     0.9906    0.9732    0.9818    454250
+                       Bot     0.3782    0.3453    0.3610       391
+                      DDoS     0.9898    0.9785    0.9841     25605
+             DoS GoldenEye     0.7653    0.9072    0.8302      2059
+                  DoS Hulk     0.8792    0.9754    0.9248     46025
+          DoS Slowhttptest     0.8704    0.9645    0.9150      1100
+             DoS slowloris     0.9553    0.9776    0.9663      1159
+               FTP-Patator     0.9555    0.9887    0.9718      1587
+                Heartbleed     0.4000    1.0000    0.5714         2
+              Infiltration     0.0258    0.5714    0.0494         7
+                  PortScan     0.8958    0.9372    0.9160     31761
+               SSH-Patator     0.8221    0.9280    0.8718      1180
+  Web Attack - Brute Force     0.3571    0.0831    0.1348       301
+Web Attack - Sql Injection     0.0049    0.2500    0.0096         4
+          Web Attack - XSS     0.1047    0.8846    0.1873       130
+
+                  accuracy                         0.9703    565561
+                 macro avg     0.6263    0.7843    0.6450    565561
+              weighted avg     0.9736    0.9703    0.9715    565561
+
+
+PASS 1 (backbone only, no bias)
+                            precision    recall  f1-score   support
+
+                    BENIGN     0.9906    0.9732    0.9818    454250
+                       Bot     0.3824    0.3453    0.3629       391
+                      DDoS     0.9898    0.9785    0.9841     25605
+             DoS GoldenEye     0.7659    0.9072    0.8306      2059
+                  DoS Hulk     0.8793    0.9754    0.9248     46025
+          DoS Slowhttptest     0.8704    0.9645    0.9150      1100
+             DoS slowloris     0.9553    0.9776    0.9663      1159
+               FTP-Patator     0.9561    0.9887    0.9721      1587
+                Heartbleed     0.4000    1.0000    0.5714         2
+              Infiltration     0.0260    0.5714    0.0497         7
+                  PortScan     0.8958    0.9372    0.9161     31761
+               SSH-Patator     0.8227    0.9280    0.8722      1180
+  Web Attack - Brute Force     0.3571    0.0831    0.1348       301
+Web Attack - Sql Injection     0.0049    0.2500    0.0096         4
+          Web Attack - XSS     0.1049    0.8846    0.1876       130
+
+                  accuracy                         0.9704    565561
+                 macro avg     0.6268    0.7843    0.6453    565561
+              weighted avg     0.9736    0.9704    0.9716    565561
+
+
+Confusion matrix, pass 2
+labels: BENIGN, Bot, DDoS, DoS GoldenEye, DoS Hulk, DoS Slowhttptest, DoS slowloris, FTP-Patator, Heartbleed, Infiltration, PortScan, SSH-Patator, Web Attack - Brute Force, Web Attack - Sql Injection, Web Attack - XSS
+[[442063    222    257    554   6121    144     35     72      3    131   3462    216     44    143    783]
+ [   256    135      0      0      0      0      0      0      0      0      0      0      0      0      0]
+ [   519      0  25055      1     30      0      0      0      0      0      0      0      0      0      0]
+ [   180      0      0   1868      2      2      0      0      0      2      0      0      1      4      0]
+ [  1117      0      0     11  44892      1      1      0      0      3      0      0      0      0      0]
+ [    27      0      0      0      0   1061      2      0      0      9      0      0      0      0      1]
+ [     7      0      0      0      0     11   1133      1      0      6      0      1      0      0      0]
+ [     4      0      0      0      3      0      9   1569      0      0      0      2      0      0      0]
+ [     0      0      0      0      0      0      0      0      2      0      0      0      0      0      0]
+ [     3      0      0      0      0      0      0      0      0      4      0      0      0      0      0]
+ [  1966      0      1      7     12      0      5      0      0      0  29767      0      0      1      2]
+ [    34      0      0      0      1      0      1      0      0      0      0   1095      0     49      0]
+ [    57      0      0      0      0      0      0      0      0      0      0     16     25      6    197]
+ [     1      0      0      0      0      0      0      0      0      0      0      2      0      1      0]
+ [    14      0      0      0      1      0      0      0      0      0      0      0      0      0    115]]

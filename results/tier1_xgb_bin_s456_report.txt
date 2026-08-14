@@ -1,0 +1,22 @@
+XGBoost binary seed 456
+macro_f1=0.9988 accuracy=0.9993 auc_roc=1.0000
+train_time_s=9.3 inference_time_s=0.19
+
+              precision    recall  f1-score   support
+
+      BENIGN     0.9997    0.9994    0.9995    454250
+      ATTACK     0.9974    0.9988    0.9981    111311
+
+    accuracy                         0.9993    565561
+   macro avg     0.9986    0.9991    0.9988    565561
+weighted avg     0.9993    0.9993    0.9993    565561
+
+
+Per-class false positive rate
+  BENIGN                        0.001168
+  ATTACK                        0.000636
+
+Confusion matrix
+labels: BENIGN, ATTACK
+[[453961    289]
+ [   130 111181]]

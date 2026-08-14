@@ -1,0 +1,17 @@
+Random Forest — binary attack vs benign, seed=42
+train_time_s=75.5  inference_time_s=0.67
+
+              precision    recall  f1-score   support
+
+      BENIGN     0.9998    0.9989    0.9993    454250
+      ATTACK     0.9955    0.9991    0.9973    111311
+
+    accuracy                         0.9989    565561
+   macro avg     0.9977    0.9990    0.9983    565561
+weighted avg     0.9989    0.9989    0.9989    565561
+
+
+Confusion matrix
+labels: BENIGN, ATTACK
+[[453749    501]
+ [    96 111215]]

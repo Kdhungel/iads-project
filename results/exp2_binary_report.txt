@@ -1,0 +1,18 @@
+exp2_binary  seed=42  activation=relu
+train_time_s=3495.3  inference_time_s=10.4
+params=595330
+
+              precision    recall  f1-score   support
+
+      BENIGN     0.9992    0.9435    0.9705    454250
+      ATTACK     0.8121    0.9968    0.8950    111311
+
+    accuracy                         0.9540    565561
+   macro avg     0.9056    0.9701    0.9328    565561
+weighted avg     0.9623    0.9540    0.9557    565561
+
+
+Confusion matrix
+labels: BENIGN, ATTACK
+[[428578  25672]
+ [   358 110953]]
