@@ -1,0 +1,22 @@
+Binary task, config=relu_sigmoid, seed=456
+hidden_activation=relu  output_activation=sigmoid
+loss=BCELoss
+output_units=1
+train_time_s=3532.2 inference_time_s=10.6
+params=595201
+macro_f1=0.9604
+
+              precision    recall  f1-score   support
+
+      BENIGN     0.9973    0.9702    0.9835    454250
+      ATTACK     0.8904    0.9892    0.9372    111311
+
+    accuracy                         0.9739    565561
+   macro avg     0.9438    0.9797    0.9604    565561
+weighted avg     0.9762    0.9739    0.9744    565561
+
+
+Confusion matrix
+labels: BENIGN, ATTACK
+[[440692  13558]
+ [  1201 110110]]

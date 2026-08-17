@@ -1,0 +1,23 @@
+1D-CNN binary task, config=leaky_sigmoid, seed=456
+conv_activation=leakyrelu  output_activation=sigmoid
+loss=BCELoss
+output_units=1
+train_time_s=259.0 inference_time_s=2.5
+params=582529
+macro_f1=0.9948
+missed_attacks=258 false_positives=1600
+
+              precision    recall  f1-score   support
+
+      BENIGN     0.9994    0.9965    0.9980    454250
+      ATTACK     0.9858    0.9977    0.9917    111311
+
+    accuracy                         0.9967    565561
+   macro avg     0.9926    0.9971    0.9948    565561
+weighted avg     0.9967    0.9967    0.9967    565561
+
+
+Confusion matrix
+labels: BENIGN, ATTACK
+[[452650   1600]
+ [   258 111053]]

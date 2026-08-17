@@ -1,0 +1,22 @@
+Binary task, config=leaky_sigmoid, seed=42
+hidden_activation=leakyrelu  output_activation=sigmoid
+loss=BCELoss
+output_units=1
+train_time_s=3574.1 inference_time_s=10.9
+params=595201
+macro_f1=0.9258
+
+              precision    recall  f1-score   support
+
+      BENIGN     0.9819    0.9570    0.9693    454250
+      ATTACK     0.8408    0.9279    0.8822    111311
+
+    accuracy                         0.9512    565561
+   macro avg     0.9114    0.9424    0.9258    565561
+weighted avg     0.9541    0.9512    0.9521    565561
+
+
+Confusion matrix
+labels: BENIGN, ATTACK
+[[434699  19551]
+ [  8022 103289]]

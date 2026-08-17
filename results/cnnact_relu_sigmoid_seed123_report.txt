@@ -1,0 +1,23 @@
+1D-CNN binary task, config=relu_sigmoid, seed=123
+conv_activation=relu  output_activation=sigmoid
+loss=BCELoss
+output_units=1
+train_time_s=261.8 inference_time_s=2.4
+params=582529
+macro_f1=0.9952
+missed_attacks=272 false_positives=1460
+
+              precision    recall  f1-score   support
+
+      BENIGN     0.9994    0.9968    0.9981    454250
+      ATTACK     0.9870    0.9976    0.9923    111311
+
+    accuracy                         0.9969    565561
+   macro avg     0.9932    0.9972    0.9952    565561
+weighted avg     0.9970    0.9969    0.9969    565561
+
+
+Confusion matrix
+labels: BENIGN, ATTACK
+[[452790   1460]
+ [   272 111039]]

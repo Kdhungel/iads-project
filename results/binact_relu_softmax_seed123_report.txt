@@ -1,0 +1,22 @@
+Binary task, config=relu_softmax, seed=123
+hidden_activation=relu  output_activation=softmax
+loss=CrossEntropyLoss
+output_units=2
+train_time_s=3513.6 inference_time_s=10.5
+params=595330
+macro_f1=0.9527
+
+              precision    recall  f1-score   support
+
+      BENIGN     0.9954    0.9656    0.9803    454250
+      ATTACK     0.8749    0.9816    0.9252    111311
+
+    accuracy                         0.9688    565561
+   macro avg     0.9351    0.9736    0.9527    565561
+weighted avg     0.9717    0.9688    0.9694    565561
+
+
+Confusion matrix
+labels: BENIGN, ATTACK
+[[438629  15621]
+ [  2043 109268]]

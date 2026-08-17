@@ -1,0 +1,23 @@
+1D-CNN binary task, config=relu_softmax, seed=42
+conv_activation=relu  output_activation=softmax
+loss=CrossEntropyLoss
+output_units=2
+train_time_s=253.7 inference_time_s=2.5
+params=582786
+macro_f1=0.9950
+missed_attacks=242 false_positives=1568
+
+              precision    recall  f1-score   support
+
+      BENIGN     0.9995    0.9965    0.9980    454250
+      ATTACK     0.9861    0.9978    0.9919    111311
+
+    accuracy                         0.9968    565561
+   macro avg     0.9928    0.9972    0.9950    565561
+weighted avg     0.9968    0.9968    0.9968    565561
+
+
+Confusion matrix
+labels: BENIGN, ATTACK
+[[452682   1568]
+ [   242 111069]]
